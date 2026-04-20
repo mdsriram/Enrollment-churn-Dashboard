@@ -20,6 +20,8 @@ INSERT INTO members values
 
 select * from members;
 
+ --auto generating values 
+
 WITH numbers AS (
     SELECT TOP 100 ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) + 200 AS member_id
     FROM sys.objects
