@@ -14,16 +14,13 @@ This project uses simulated Medicaid data with the following tables:
 
 - **members**: member_id, age, gender, county, plan_name
 - **enrollment_history**: enrollment_date, disenrollment_date, status
-
-These tables were joined using member_id to analyze enrollment patterns and churn behavior.
-The data model follows a one-to-many relationship where a single member can have multiple enrollment records over time.
-
+These tables were joined using member_id to analyze enrollment patterns and churn behavior. The data model follows a one-to-many relationship where a single member can have multiple enrollment records over time.
 ## Key Metrics (KPIs)
 
 - **Churn Rate** = Members Disenrolled / Total Members
 - **Active Members** = Members with active enrollment status
-- **Disenrollment Rate** = Members leaving the program in a given period
-- **Enrollment Trend** = Monthly new member additions
+- **Disenrollment Rate** = Members disenrolled / Total Members in a given period
+- **Retention Rate** = Active Members / Total Members 
 
 ## Approach
 - Created relational tables using SQL
@@ -33,7 +30,7 @@ The data model follows a one-to-many relationship where a single member can have
 - Designed dashboard with filters for county, plan, and eligibility category
   
 ## Key Features
-- KPI Dashboard (Total Members, Churn Rate, Active Members)
+- KPI Dashboard (Total Members, Churn Rate, Active Members, Retention Rate)
 - Monthly Enrollment & Disenrollment Trends
 - County & Plan Analysis
 - Interactive Filters
@@ -43,7 +40,7 @@ The data model follows a one-to-many relationship where a single member can have
 - Harris and Bexar counties show the highest disenrollment, suggesting potential retention issues in these regions
 - BCBS plan has the highest member loss, indicating plan-level churn concentration
 - Re-enrollment patterns suggest gaps in continuous coverage, leading to administrative inefficiencies
-- 69% of members remain active, showing stable enrollment but scope for retention improvement
+- Retention rate of **~69%** indicates relatively stable membership, but also highlights opportunities to improve retention and reduce churn
 - These insights suggest focusing retention strategies on high-churn counties and plans, and improving continuity of coverage to reduce re-enrollment gaps.
 - These findings can help healthcare organizations prioritize retention strategies, optimize plan performance, and reduce administrative costs associated with member churn.
 
@@ -64,7 +61,8 @@ The data model follows a one-to-many relationship where a single member can have
 - PowerBI/
   - medicaid_enrollment_churn_dashboard.pbix
 - Images/
-  - dashboard.png
+  - Dashboard.png
+  - KPI.png
 
 ## Dashboard Preview
-![Dashboard](Images/dashboard.png)
+![Dashboard](Images/Dashboard.png)
