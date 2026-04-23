@@ -1,7 +1,7 @@
 Medicaid Enrollment & Churn Analysis Dashboard
 
 ## Overview
-This project analyzes Medicaid member enrollment and disenrollment trends to identify churn patterns, high-risk populations, and opportunities for improving retention strategies.
+This project analyzes Medicaid member enrollment and disenrollment trends to identify churn patterns, high-risk populations, and opportunities for improving retention strategies. This analysis helps healthcare organizations improve member retention, reduce churn, and optimize operational efficiency.
 
 ## Objectives
 - Track enrollment and disenrollment trends
@@ -10,18 +10,28 @@ This project analyzes Medicaid member enrollment and disenrollment trends to ide
 - Provide actionable insights
 
 ## Dataset
-- members
-- enrollment_history
-- important fields used
+This project uses simulated Medicaid data with the following tables:
 
-## Tools
-- SQL, Power BI, Excel
+- **members**: member_id, age, gender, county, plan_name
+- **enrollment_history**: enrollment_date, disenrollment_date, status
 
-## Process
-- Created tables and loaded sample data
-- Wrote SQL queries for analysis
-- Built Power BI data model and dashboard
+These tables were joined using member_id to analyze enrollment patterns and churn behavior.
+The data model follows a one-to-many relationship where a single member can have multiple enrollment records over time.
 
+## Key Metrics (KPIs)
+
+- **Churn Rate** = Members Disenrolled / Total Members
+- **Active Members** = Members with active enrollment status
+- **Disenrollment Rate** = Members leaving the program in a given period
+- **Enrollment Trend** = Monthly new member additions
+
+## Approach
+- Created relational tables using SQL
+- Generated sample enrollment and member data
+- Wrote SQL queries to calculate KPIs such as churn rate, disenrollment rate, and active members
+- Imported data into Power BI and built data model
+- Designed dashboard with filters for county, plan, and eligibility category
+  
 ## Key Features
 - KPI Dashboard (Total Members, Churn Rate, Active Members)
 - Monthly Enrollment & Disenrollment Trends
@@ -29,17 +39,32 @@ This project analyzes Medicaid member enrollment and disenrollment trends to ide
 - Interactive Filters
 
 ## Key Insights
-- Overall churn rate is 31%, indicating moderate turnover
-- Harris and Bexar counties show highest disenrollment
-- BCBS plan has highest member loss
-- 69% members remain active
+- Overall churn rate is **31%**, indicating moderate member turnover
+- Harris and Bexar counties show the highest disenrollment, suggesting potential retention issues in these regions
+- BCBS plan has the highest member loss, indicating plan-level churn concentration
+- Re-enrollment patterns suggest gaps in continuous coverage, leading to administrative inefficiencies
+- 69% of members remain active, showing stable enrollment but scope for retention improvement
+- These insights suggest focusing retention strategies on high-churn counties and plans, and improving continuity of coverage to reduce re-enrollment gaps.
+- These findings can help healthcare organizations prioritize retention strategies, optimize plan performance, and reduce administrative costs associated with member churn.
 
-## Files in this Repo
-- SQL/create_tables.sql
-- SQL/analysis_queries.sql
-- PowerBI/medicaid_enrollment_churn_dashboard.pbix
-- Images/dashboard.png
+## Tools
+- SQL (MySQL/PostgreSQL)
+- Power BI (Data Modeling, DAX, Dashboarding)
+- Excel (Data Cleaning, Analysis)
+
+## How to Use
+- Run SQL scripts in the SQL folder to create tables and data
+- Open Power BI file from the PowerBI folder
+- Explore dashboard using filters (county, plan, eligibility)
+
+## Project Structure
+- SQL/
+  - create_tables.sql
+  - analysis_queries.sql
+- PowerBI/
+  - medicaid_enrollment_churn_dashboard.pbix
+- Images/
+  - dashboard.png
 
 ## Dashboard Preview
-
 ![Dashboard](Images/dashboard.png)
